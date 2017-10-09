@@ -12,7 +12,10 @@ file:
     filetype: file
   /etc/profile.d/90-eth-common.sh:
     exists: true
-    mode: "0644"
+    mode:
+      or:
+      - "0644"
+      - "0664"
     size:
       gt: 1
     owner: root
@@ -118,7 +121,10 @@ file:
     filetype: file
   /usr/local/sbin/geth:
     exists: true
-    mode: "0755"
+    mode:
+      or:
+      - "0755"
+      - "0775"
     size:
       gt: 1
     owner: root
