@@ -12,16 +12,16 @@ for c in COLLECTIONS:
     ns.add_collection(c)
 
 ns.configure(dict(
-    project='geth',
-    repo='docker-geth',
+    project='geth-tools',
+    repo='docker-geth-tools',
     pwd=os.getcwd(),
     docker=dict(
         user=os.getenv('DOCKER_USER'),
         org=os.getenv('DOCKER_ORG',
-                      os.getenv('DOCKER_USER', 'joeblackwaslike')),
+                      os.getenv('DOCKER_USER', 'telephoneorg')),
         tag='%s/%s:latest' % (
             os.getenv('DOCKER_ORG',
-            os.getenv('DOCKER_USER', 'joeblackwaslike')), 'couchdb'
+            os.getenv('DOCKER_USER', 'telephoneorg')), 'geth-tools'
         ),
         services=['geth', "swarm"],
         shell='bash'
@@ -31,9 +31,9 @@ ns.configure(dict(
     )
 ))
 
-@task
-def templates(ctx):
-    files = ' '.join(glob.iglob('templates/**.j2', recursive=True))
-    ctx.run('tmpld --strict --data templates/vars.yaml {}'.format(files))
-
-ns.add_task(templates)
+# @task
+# def templates(ctx):
+#     files = ' '.join(glob.iglob('templates/**.j2', recursive=True))
+#     ctx.run('tmpld --strict --data templates/vars.yaml {}'.format(files))
+#
+# ns.add_task(templates)

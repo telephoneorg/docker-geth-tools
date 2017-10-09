@@ -3,7 +3,7 @@ services:
   geth:
     container_name: geth
     network_mode: host
-    image: telephoneorg/geth:latest
+    image: telephoneorg/geth-tools:latest
     environment:
       NETWORK_ID: 3
       GETH_VERBOSITY: 3
@@ -22,7 +22,7 @@ services:
   swarm:
     container_name: swarm
     network_mode: host
-    image: telephoneorg/geth:latest
+    image: telephoneorg/geth-tools:latest
     environment:
       NETWORK_ID: 3
       GETH_VERBOSITY: 3

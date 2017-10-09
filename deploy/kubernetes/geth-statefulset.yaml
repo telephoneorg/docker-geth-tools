@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: geth
-        image: joeblackwaslike/geth
+        image: telephoneorg/geth-tools
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: ethereum

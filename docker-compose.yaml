@@ -10,7 +10,7 @@ services:
         GETH_MD5SUM: 4f19032a835cdbdc0cca4086b788479a
         SOLIDITY_VERSION: 0.4.17
         SOLIDITY_MD5SUM: e80124f66673c82843ef0e4d829f5983
-    image: ${DOCKER_ORG:-joeblackwaslike}/geth:latest
+    image: ${DOCKER_ORG:-telephoneorg}/geth-tools:latest
     environment:
       NETWORK_ID: '111771'
       GETH_VERBOSITY: '3'
@@ -34,7 +34,7 @@ services:
     # - "$PWD/local/genesis.json:/opt/geth/.ethereum/private-111771/config/genesis.json"
   swarm:
     container_name: swarm
-    image: ${DOCKER_ORG:-joeblackwaslike}/geth:latest
+    image: ${DOCKER_ORG:-telephoneorg}/geth-tools:latest
     environment:
       NETWORK_ID: '111771'
       SWARM_VERBOSITY: '3'
@@ -56,7 +56,7 @@ services:
         condition: service_healthy
   # swarm2:
   #   container_name: swarm2
-  #   image: ${DOCKER_ORG:-joeblackwaslike}/geth:latest
+  #   image: ${DOCKER_ORG:-telephoneorg}/geth-tools:latest
   #   environment:
   #     NETWORK_ID: '111771'
   #     SWARM_VERBOSITY: '3'
@@ -78,7 +78,7 @@ services:
     #     condition: service_healthy
   # bootnode:
   #   container_name: bootnode
-  #   image: ${DOCKER_ORG:-joeblackwaslike}/geth:latest
+  #   image: ${DOCKER_ORG:-telephoneorg}/geth-tools:latest
   #   command: bootnode-wrap
   #   environment:
   #     # DEBUG: 'true'
@@ -94,7 +94,7 @@ services:
   #     local:
   # miner:
   #   container_name: miner
-  #   image: ${DOCKER_ORG:-joeblackwaslike}/geth:latest
+  #   image: ${DOCKER_ORG:-telephoneorg}/geth-tools:latest
   #   environment:
   #     NETWORK_ID: '111771'
   #     GETH_VERBOSITY: '3'
